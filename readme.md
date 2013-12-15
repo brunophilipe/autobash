@@ -37,3 +37,9 @@ autobash is very simple to build and install. Just open the extracted folder and
 * `make install` - sudo may be necessary in some OSses, like Linux and Ubuntu
 
 autobash has been tested on Mac OS 10.9 and Linux 12.04 LTS.
+
+---
+
+##License
+
+This project is licensed under the [GLPv3](http://www.gnu.org/licenses/gpl-3.0-standalone.html) license. Although not necessary, any feedback or attribution on the use of this software is welcome!
