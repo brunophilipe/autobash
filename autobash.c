@@ -7,13 +7,19 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libgen.h>
 #include <unistd.h>
 #include <wordexp.h>
 #include <dirent.h>
 #include <sys/types.h>
+
+#ifdef __APPLE__
 #include <sys/dirent.h>
+#else
+#include <dirent.h>
+#endif
 
 #include "autobash.h"
 

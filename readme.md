@@ -18,12 +18,14 @@ The available flags are:
 * `-a`: add the parameter file to the autobash library, its name will be the filename without the extension;
 * `-r`: remove the file with the name equal to the parameter from the autobash library;
 * `-l`: list all files currently in the autobash library;
+* `-h`: shows the help page;
 
 If you wish you can use the longer versions of the flags:
 
 * `--add`;
 * `--remove`;
 * `--list`;
+* `--help`;
 
 ---
 
@@ -32,4 +34,6 @@ If you wish you can use the longer versions of the flags:
 autobash is very simple to build and install. Just open the extracted folder and:
 
 * `make`
-* `make install`
+* `make install` - sudo may be necessary in some OSses, like Linux and Ubuntu
+
+autobash has been tested on Mac OS 10.9 and Linux 12.04 LTS.
