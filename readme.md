@@ -36,7 +36,7 @@ autobash is very simple to build and install. Just open the extracted folder and
 * `make`
 * `make install` - sudo may be necessary in some OSses, like Linux and Ubuntu
 
-autobash has been tested on Mac OS 10.9 and Linux 12.04 LTS.
+autobash has been tested on Mac OS 10.9 and Ubuntu 12.04 LTS.
 
 ---
 
