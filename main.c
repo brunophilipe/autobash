@@ -80,7 +80,7 @@ int main(int argc, const char * argv[])
 		autobash_listFiles();
 	}
 
-    return 0;
+	return 0;
 }
 
 /**

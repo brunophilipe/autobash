@@ -45,7 +45,7 @@ void autobash_runFile(const char *name)
 	sprintf(path, "%s/%s.sh", LIBRARY_PATH, name);
 
 	wordexp_t exp_result;
-    wordexp(path, &exp_result, 0); //Expand library path
+	wordexp(path, &exp_result, 0); //Expand library path
 
 	if (access(exp_result.we_wordv[0], R_OK) < 0) {
 		printf("autobash: could not find bash file named %s!\n",name);
@@ -117,7 +117,7 @@ bool autobash_deleteFile(const char *name)
 	sprintf(path, "%s/%s.sh", LIBRARY_PATH, name);
 
 	wordexp_t exp_result;
-    wordexp(path, &exp_result, 0); //Expand library path
+	wordexp(path, &exp_result, 0); //Expand library path
 
 	if (access(exp_result.we_wordv[0], R_OK) < 0) {
 		printf("autobash: could not find bash file named %s!\n",name);
@@ -145,7 +145,7 @@ void autobash_listFiles()
 	DIR *dir;
 	struct dirent *ent;
 
-    wordexp(LIBRARY_PATH, &exp_result, 0); //Expand library path
+	wordexp(LIBRARY_PATH, &exp_result, 0); //Expand library path
 
 	if (access(exp_result.we_wordv[0], R_OK) < 0) {
 		printf("autobash: no files in library.\n");
