@@ -26,4 +26,9 @@ clean:
 	rm -rf *.o
 	
 clean-all:
+	rm -rf *.o
+	rm -rf ./build/
+	
+clean-all-xcode:
+	rm -rf *.o
 	rm -rf ./../build/
