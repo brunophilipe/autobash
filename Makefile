@@ -1,4 +1,11 @@
-all: commands.o autobash.o main.o
+all: build
+
+build:
+	mkdir -p ./build
+	gcc commands.o autobash.o main.o -o ./build/autobash
+	$(MAKE) clean
+	
+build-xcode:
 	mkdir -p ./../build
 	gcc commands.o autobash.o main.o -o ./../build/autobash
 	$(MAKE) clean
