@@ -23,7 +23,7 @@ install:
 	cp ./build/autobash /usr/local/bin/
 	
 install-xcode:
-cp ./../build/autobash /usr/local/bin/
+	cp ./../build/autobash /usr/local/bin/
 
 clean:
 	rm -rf *.o
