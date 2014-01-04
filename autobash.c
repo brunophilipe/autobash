@@ -101,6 +101,8 @@ bool autobash_importFile(const char *path)
 	system("mkdir -p ~/.autobash/library/");
 	system(command);
 
+	printf("autobash: file %s successfully added to library.\n",name);
+
 	free(name);
 	free(destination);
 	free(command);
@@ -132,7 +134,9 @@ bool autobash_deleteFile(const char *name)
 	printf("autobash: are you sure you want to remove the file %s from the library? It will be deleted. [Y/n]: ", name);
 	scanf("%c",&confirmation);
 
-	if (confirmation != 'n' || confirmation != 'N') {
+	if (debug) printf("Got input: %c\n",confirmation);
+
+	if (confirmation != 'n' && confirmation != 'N') {
 		system(command);
 		printf("autobash: bash file %s removed from library.\n", name);
 	}
