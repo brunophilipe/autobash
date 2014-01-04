@@ -82,15 +82,15 @@ bool autobash_importFile(const char *path)
 
 	long length = strrchr(filename, '.')-filename;
 
-	if (length <= 0) {
-		return false;
+	if (length <= 0) { //File has no extension
+		strcpy(name, filename);
+	} else { //File has extension
+		strncpy(name, filename, length);
 	}
-
-	strncpy(name, filename, length);
 
 	name[strlen(name)] = '\0';
 
-	destination = malloc(sizeof(char)*(strlen(LIBRARY_PATH)+strlen(name)+5));
+	destination = malloc(sizeof(char)*(strlen(LIBRARY_PATH)+strlen(name)+5)); //lengths of: path + / + filename + .sh + \0
 	sprintf(destination, "%s/%s.sh", LIBRARY_PATH, name);
 
 	command = malloc(sizeof(char)*(strlen(path)+strlen(destination)+5));
@@ -112,8 +112,9 @@ bool autobash_deleteFile(const char *name)
 {
 	char *command;
 	char *path;
+	char confirmation;
 
-	path = malloc(sizeof(char)*(strlen(LIBRARY_PATH)+strlen(name)+5));
+	path = malloc(sizeof(char)*(strlen(LIBRARY_PATH)+strlen(name)+5));  //lengths of: path + / + filename + .sh + \0
 	sprintf(path, "%s/%s.sh", LIBRARY_PATH, name);
 
 	wordexp_t exp_result;
@@ -128,9 +129,13 @@ bool autobash_deleteFile(const char *name)
 	command = malloc(sizeof(char)*(strlen(exp_result.we_wordv[0])+5));
 	sprintf(command, "rm %s", exp_result.we_wordv[0]);
 
-	system(command);
+	printf("autobash: are you sure you want to remove the file %s from the library? It will be deleted. [Y/n]: ", name);
+	scanf("%c",&confirmation);
 
-	printf("autobash: bash file %s removed from library.\n",name);
+	if (confirmation != 'n' || confirmation != 'N') {
+		system(command);
+		printf("autobash: bash file %s removed from library.\n", name);
+	}
 
 	free(path);
 	free(command);
