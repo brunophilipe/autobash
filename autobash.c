@@ -35,6 +35,7 @@
 #endif
 
 #include "autobash.h"
+#include "textstyle.h"
 
 void autobash_runFile(const char *name)
 {
@@ -146,6 +147,50 @@ bool autobash_deleteFile(const char *name)
 	wordfree(&exp_result);
 
 	return true;
+}
+
+void autobash_editFile(const char *name)
+{
+	char *editor;
+	char *command;
+	char *path;
+
+	//Get file path
+	path = malloc(sizeof(char)*(strlen(LIBRARY_PATH)+strlen(name)+5));
+	sprintf(path, "%s/%s.sh", LIBRARY_PATH, name);
+
+	wordexp_t exp_result;
+	wordexp(path, &exp_result, 0); //Expand library path
+
+	//Test file path
+	if (access(exp_result.we_wordv[0], R_OK) < 0) {
+		printf("autobash: could not find bash file named %s!\n",name);
+		if (debug) printf("%s\n",exp_result.we_wordv[0]);
+		return;
+	}
+
+	//Get editor name
+	if (getenv("EDITOR") != NULL) {
+		editor = getenv("EDITOR");
+	} else {
+		printf("notice:"BOLD" autobash "RESET"uses the editor set in the $EDITOR enviroment variable, which is not defined!\nTo use your favorite text editor, set this variable with the name of the editor such as 'nano'.\nBy default the 'vi' editor is used.\n\n");
+		editor = "vi";
+
+		printf("Press [Enter] to continue...\n");
+		getchar();
+	}
+
+	//Build command
+	command = malloc(sizeof(char)*(strlen(exp_result.we_wordv[0])+7));
+	sprintf(command, "%s %s", editor, exp_result.we_wordv[0]);
+
+	system(command);
+
+	printf("autobash: process finished!\n");
+
+	free(path);
+	free(command);
+	wordfree(&exp_result);
 }
 
 void autobash_listFiles()

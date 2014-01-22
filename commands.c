@@ -32,6 +32,7 @@ BPCommand commands_getCommandForString(const char *input)
 	else if (strcmp(input, "--remove") == 0	|| strcmp(input, "-r") == 0) return kBPCommandRemove;
 	else if (strcmp(input, "--list") == 0	|| strcmp(input, "-l") == 0) return kBPCommandList;
 	else if	(strcmp(input, "--help") == 0	|| strcmp(input, "-h") == 0) return kBPCommandHelp;
+	else if	(strcmp(input, "--edit") == 0	|| strcmp(input, "-e") == 0) return kBPCommandEdit;
 	else return kBPCommandRun;
 }
 

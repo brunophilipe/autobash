@@ -79,6 +79,11 @@ int main(int argc, const char * argv[])
 		if (debug) printf("Debug: Entering file-list mode...\n");
 		autobash_listFiles();
 	}
+	else if (command & kBPCommandEdit)
+	{
+		if (debug) printf("Debug: Entering file-edit mode...\n");
+		autobash_editFile(argv[(debug ? 3 : 2)]);
+	}
 
 	return 0;
 }
@@ -88,13 +93,14 @@ int main(int argc, const char * argv[])
  */
 void showHelpMessages()
 {
-	printf("\n"BOLD"autobash version 1.0.1 – www.brunophilipe.com\n"RESET);
+	printf("\n"BOLD"autobash version 1.1 – www.brunophilipe.com\n"RESET);
 	printf("usage: autobash [flag] file\n\n");
 	printf("Flags:\n");
 	printf("\t(no flags) source_file\n\t\tRuns the bash file with the parameter name.\n\t\tThis bash must be in the autobash library.\n\n");
 	printf("\t[-a|--add] source_file\n\t\tAdds the parameter file to the autobash library.\n\n");
 	printf("\t[-r|--remove] bash_name\n\t\tRemoves the parameter bash from the autobash library.\n\t\tThis name should not contain an extension.\n\n");
 	printf("\t[-l|--list]\n\t\tLists the bash files currently in the autobash library.\n\n");
+	printf("\t[-e|--edit] source_file\n\t\tEdits the parameter file with the default editor set in $EDITOR.\n\n");
 	printf("\t[-h|--help]\n\t\tShows this help.\n\n");
 	printf("Example:\n");
 	printf("\tautobash --add ./myscript.sh\n\t\tAdds myscript.sh to the autobash library with the name myscript.\n\n");

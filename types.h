@@ -30,7 +30,8 @@ enum {
 	kBPCommandRemove	= 1<<2,
 	kBPCommandList		= 1<<3,
 	kBPCommandHelp		= 1<<4,
-	kBPCommandRun		= 1<<5
+	kBPCommandRun		= 1<<5,
+	kBPCommandEdit		= 1<<6
 };
 
 typedef short bool;

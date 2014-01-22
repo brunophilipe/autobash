@@ -58,4 +58,9 @@ bool autobash_deleteFile(const char *name);
  */
 void autobash_listFiles();
 
+/**
+ Opens the default text editor with the bash file with the matching name.
+ */
+void autobash_editFile(const char *name);
+
 #endif
