@@ -95,10 +95,10 @@ void showHelpMessages()
 {
 	printf("\n"BOLD);
 	printf("               __        __               __  \n");
-	printf("  ____ ___  __/ /_____  / /_  ____ ______/ /_ \n");
-	printf(" / __ `/ / / / __/ __ \\/ __ \\/ __ `/ ___/ __ \\\n");
-	printf("/ /_/ / /_/ / /_/ /_/ / /_/ / /_/ (__  ) / / /\n");
-	printf("\\__,_/\\__,_/\\__/\\____/_.___/\\__,_/____/_/ /_/ \nVersion 1.2\n");
+	printf("   ____ ___  __/ /_____  / /_  ____ ______/ /_ \n");
+	printf("  / __ `/ / / / __/ __ \\/ __ \\/ __ `/ ___/ __ \\\n");
+	printf(" / /_/ / /_/ / /_/ /_/ / /_/ / /_/ (__  ) / / /\n");
+	printf(" \\__,_/\\__,_/\\__/\\____/_.___/\\__,_/____/_/ /_/ \nVersion 1.2 - brunophilipe.com/software/autobash\n");
 	printf(RESET"\n");
 	printf("usage: autobash [flag] file\n\n");
 	printf("Flags:\n");
