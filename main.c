@@ -94,7 +94,7 @@ int main(int argc, const char * argv[])
 void showHelpMessages()
 {
 	printf("\n"BOLD);
-	printf("               __        __               __  \n");
+	printf("                __        __               __  \n");
 	printf("   ____ ___  __/ /_____  / /_  ____ ______/ /_ \n");
 	printf("  / __ `/ / / / __/ __ \\/ __ \\/ __ `/ ___/ __ \\\n");
 	printf(" / /_/ / /_/ / /_/ /_/ / /_/ / /_/ (__  ) / / /\n");
