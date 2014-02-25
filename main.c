@@ -93,7 +93,13 @@ int main(int argc, const char * argv[])
  */
 void showHelpMessages()
 {
-	printf("\n"BOLD"autobash version 1.1 – www.brunophilipe.com\n"RESET);
+	printf("\n"BOLD);
+	printf("               __        __               __  \n");
+	printf("  ____ ___  __/ /_____  / /_  ____ ______/ /_ \n");
+	printf(" / __ `/ / / / __/ __ \\/ __ \\/ __ `/ ___/ __ \\\n");
+	printf("/ /_/ / /_/ / /_/ /_/ / /_/ / /_/ (__  ) / / /\n");
+	printf("\\__,_/\\__,_/\\__/\\____/_.___/\\__,_/____/_/ /_/ \nVersion 1.2\n");
+	printf(RESET"\n");
 	printf("usage: autobash [flag] file\n\n");
 	printf("Flags:\n");
 	printf("\t(no flags) source_file\n\t\tRuns the bash file with the parameter name.\n\t\tThis bash must be in the autobash library.\n\n");
